@@ -1,0 +1,19 @@
+{
+   "private": true,
+   "name": "trpc-expo-nextjs",
+   "workspaces": [
+      "packages/*",
+      "apps/*"
+   ],
+   "devDependencies": {
+      "turbo": "^1.4.6",
+      "patch-package": "^6.4.7"
+   },
+   "scripts": {
+      "postinstall": "patch-package && yarn db-push && turbo run postinstall",
+      "db-push": "npm run db-push -w @app/server",
+      "build": "turbo run build",
+      "dev": "patch-package && turbo run dev --parallel",
+      "lint": "turbo run lint"
+   }
+}
