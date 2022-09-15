@@ -13,7 +13,7 @@ apps
      |- React Native using React 18
      |- Tailwind using Nativewind
      |- Typesafe API calls using tRPC
-     |- NextAuth.js (expo modification) support
+     |- NextAuth.js (expo fixes added)
  |- next.js
      |- React 18
      |- TailwindCSS
@@ -99,9 +99,9 @@ With all this done, you are able to use NextAuth.js as normal in your Expo and N
 
 Make sure to follow the NextAuth.js notes above for configured that part of this stack, but otherwise:
 
--  Make sure you copy the `.env.template` from [`packages/server`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/auth) to `packages/server/.env` and populate it with your values
+-  Make sure you copy the [`.env.template`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/env.template) from [`packages/server`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server) to `packages/server/.env` and populate it with your values
    > If you want to change auth providers/add new ones, make sure to also edit [`packages/server/auth`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/types/env.d.ts) to reflect upon your type changes!
--  Make sure to modify the `dev` script in Expo (`apps/expo`) to match the platform you're using
+-  Make sure to modify the `dev` script in Expo ([`apps/expo`](https://github.com/davidilie/t3-all-inclusive/tree/master/apps/expo)) to match the platform you're using
 
 ```diff
 // for IOS:
