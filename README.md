@@ -33,13 +33,13 @@ With all this mind, you can clone this repository and get started, read below fo
 
 All work for that needs to be awarded to [An Hoan](https://github.com/intagaming) and his excellent work with modifying NextAuth.js to support [Expo](https://github.com/intagaming/next-auth) where you can take a look at the `expo` folder to see what this does.
 
-> Everything authentication related is at [`packages/server/auth`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/auth)
+> Everything authentication related is at [`packages/server/auth`](https://github.com/DavidIlie/t3-all-inclusive/tree/master/packages/server/src/auth)
 
 ## Adding/modifying providers
 
 The template provider used is Discord, but it can easily be changed with something else:
 
-Before anything, you need to go to the [`packages/sever/auth/providers.ts`](<(https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/auth/providers.ts)>) file and modify a few constants:
+Before anything, you need to go to the [`packages/sever/auth/providers.ts`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/src/auth/providers.ts) file and modify a few constants:
 
 -  First modify the `nativeProviders` variable to include your correct corresponding ID for the Expo counterpart (you will see how this works below, **use the Discord one as an example!!**)
 
@@ -89,7 +89,7 @@ DiscordProvider({
 },
 ```
 
-> This could bring up account linking problems, [so a `signin` callback is used to fix it](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/auth/index.ts#L38)
+> This could bring up account linking problems, [so a `signin` callback is used to fix it](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/src/auth/index.ts#L38)
 
 With all this done, you are able to use NextAuth.js as normal in your Expo and Next.js application with the same account/provider with the traditional functions that you are familiar with;
 
@@ -100,7 +100,7 @@ With all this done, you are able to use NextAuth.js as normal in your Expo and N
 Make sure to follow the NextAuth.js notes above for configured that part of this stack, but otherwise:
 
 -  Make sure you copy the [`.env.template`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/env.template) from [`packages/server`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server) to `packages/server/.env` and populate it with your values
-   > If you want to change auth providers/add new ones, make sure to also edit [`packages/server/auth`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/types/env.d.ts) to reflect upon your type changes!
+   > If you want to change auth providers/add new ones, make sure to also edit [`packages/server/auth`](https://github.com/davidilie/t3-all-inclusive/tree/master/packages/server/src/types/env.d.ts) to reflect upon your type changes!
 -  Make sure to modify the `dev` script in Expo ([`apps/expo`](https://github.com/davidilie/t3-all-inclusive/tree/master/apps/expo)) to match the platform you're using
 
 ```diff
